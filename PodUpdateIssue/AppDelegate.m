@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 
+#import <Facebook-iOS-SDK/FacebookSDK/Facebook.h>
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +18,10 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+{
+
+    [FBSettings setDefaultAppID:@"test"];
     
 #if CLIQ_DEBUG
     NSLog(@"Configuration: Debug");
