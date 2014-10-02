@@ -17,6 +17,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+#if CLIQ_DEBUG
+    NSLog(@"Configuration: Debug");
+#elif CLIQ_ADHOC
+    NSLog(@"Configuration: AdHoc");
+#elif CLIQ_APPSTORE
+    NSLog(@"Configuration: AppStore");
+#endif
+
+#if CLIQ_DEVELOPMENT
+    NSLog(@"Environment: Development");
+#elif CLIQ_STAGING
+    NSLog(@"Environment: Staging");
+#elif CLIQ_PRODUCTION
+    NSLog(@"Environment: Production");
+#endif
+
     // Override point for customization after application launch.
     return YES;
 }
